@@ -60,6 +60,11 @@ class Recomendacion(BaseModel):
     avg_rating: float
     mensaje: str
 
+# Endpoint raíz
+@app.get("/")
+def read_root():
+    return {"message": "API en funcionamiento 🚀"}
+
 # Endpoint para análisis de sentimientos
 @app.get("/clasificar_comentario")
 def clasificar_comentario(texto: str):
