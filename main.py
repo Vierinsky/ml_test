@@ -2,7 +2,7 @@
 # Estamos probando con : 11220, Tuesday, 16.0
 
 from fastapi import FastAPI, Query, HTTPException
-from fastapi.responses import HTMLResponse
+from fastapi.responses import RedirectResponse
 from pydantic import BaseModel
 from typing import List
 import joblib
@@ -64,71 +64,7 @@ class Recomendacion(BaseModel):
 # Endpoint raíz
 @app.get("/")
 def read_root():
-
-    html_content = """
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>API en Funcionamiento 🚀</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                text-align: center;
-                padding: 50px;
-                background-color: #f4f4f4;
-            }
-            h1 {
-                color: #333;
-            }
-            .container {
-                background: white;
-                padding: 20px;
-                border-radius: 8px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                display: inline-block;
-                text-align: left;
-            }
-            a {
-                text-decoration: none;
-                color: #007bff;
-            }
-            .btn {
-                display: inline-block;
-                padding: 10px 20px;
-                background-color: #007bff;
-                color: white;
-                text-decoration: none;
-                border-radius: 5px;
-                margin: 10px;
-            }
-            ul {
-                list-style-type: none;
-                padding: 0;
-            }
-            li {
-                margin: 5px 0;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h1>🚀 API en Funcionamiento</h1>
-            <p>Bienvenido a la API de análisis de comentarios y recomendaciones de restaurantes.</p>
-            <p><strong>Documentación interactiva:</strong></p>
-            <a href="/docs" target="_blank" class="btn">Abrir Swagger UI</a>
-            <p><strong>Endpoints disponibles:</strong></p>
-            <ul>
-                <li>📝 <a href="/clasificar_comentario?texto=Me%20encanta%20este%20lugar!" target="_blank">Análisis de sentimiento</a></li>
-                <li>🍽️ <a href="/recomendar_restaurantes?zip_code=11220&dia=Tuesday&hora=16.0" target="_blank">Sistema de Recomendación de Restaurantes</a></li>
-            </ul>
-            <p>Visita la documentación para más información sobre cómo utilizar la API.</p>
-        </div>
-    </body>
-    </html>
-    """
-    return HTMLResponse(content=html_content)
+    return RedirectResponse(url="/docs")
 
 # Endpoint para análisis de sentimientos
 @app.get("/clasificar_comentario")
