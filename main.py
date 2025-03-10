@@ -120,8 +120,8 @@ def read_root():
             <a href="/docs" target="_blank" class="btn">Abrir Swagger UI</a>
             <p><strong>Endpoints disponibles:</strong></p>
             <ul>
-                <li>📝 <a href="/clasificar_comentario?texto=Me%20encanta%20este%20lugar!" target="_blank">Prueba Análisis de sentimiento</a></li>
-                <li>🍽️ <a href="/recomendar_restaurantes?zip_code=11220&dia=Tuesday&hora=16.0" target="_blank">Prueba Sistema de Recomendación de Restaurantes</a></li>
+                <li>📝 <a href="/clasificar_comentario?texto=Me%20encanta%20este%20lugar!" target="_blank">Análisis de sentimiento</a></li>
+                <li>🍽️ <a href="/recomendar_restaurantes?zip_code=11220&dia=Tuesday&hora=16.0" target="_blank">Sistema de Recomendación de Restaurantes</a></li>
             </ul>
             <p>Visita la documentación para más información sobre cómo utilizar la API.</p>
         </div>
