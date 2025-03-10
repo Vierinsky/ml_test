@@ -63,7 +63,25 @@ class Recomendacion(BaseModel):
 # Endpoint raíz
 @app.get("/")
 def read_root():
-    return {"message": "API en funcionamiento 🚀"}
+    return """
+    <html>
+        <head>
+            <title>API en Funcionamiento 🚀</title>
+        </head>
+        <body style="font-family: Arial, sans-serif; text-align: center; padding: 50px;">
+            <h1>🚀 API en Funcionamiento</h1>
+            <p>Bienvenido a la API de análisis de comentarios y recomendaciones de restaurantes.</p>
+            <p><strong>Documentación interactiva:</strong></p>
+            <a href="/docs" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Abrir Swagger UI</a>
+            <p><strong>Endpoints disponibles:</strong></p>
+            <ul style="list-style: none; padding: 0;">
+                <li>📝 <a href="/clasificar_comentario?texto=Me%20encanta%20este%20lugar!" target="_blank">Clasificar Comentario</a></li>
+                <li>🍽️ <a href="/recomendar_restaurantes?zip_code=11220&dia=Tuesday&hora=16.0" target="_blank">Recomendar Restaurantes</a></li>
+            </ul>
+            <p>Visita la documentación para más información sobre cómo utilizar la API.</p>
+        </body>
+    </html>
+    """
 
 # Endpoint para análisis de sentimientos
 @app.get("/clasificar_comentario")
