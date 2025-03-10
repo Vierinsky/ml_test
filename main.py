@@ -2,6 +2,7 @@
 # Estamos probando con : 11220, Tuesday, 16.0
 
 from fastapi import FastAPI, Query, HTTPException
+from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 from typing import List
 import joblib
@@ -63,7 +64,7 @@ class Recomendacion(BaseModel):
 # Endpoint raíz
 @app.get("/")
 def read_root():
-    
+
     html_content = """
     <!DOCTYPE html>
     <html lang="es">
